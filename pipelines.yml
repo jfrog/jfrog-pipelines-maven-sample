@@ -21,7 +21,6 @@ pipelines:
       - name: mvn_build_step
         type: MvnBuild
         configuration:
-          sourceLocation: jfrog-pipelines-maven-sample
          # resolverSnapshotRepo: maven-jcenter
          # resolverReleaseRepo: maven-jcenter
           deployerSnapshotRepo: maven-local

@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: manishas-jfrog/jfrog-pipelines-maven-sample
-      gitProvider: zenGit
+      gitProvider: manishas_github
 
   - name: appl_build_info
     type: BuildInfo

@@ -1,19 +1,14 @@
 resources:
-  - name: be_gitRepo
+  - name: mvn_repo
     type: GitRepo
     configuration:
-      path: manishas-jfrog/jfrog-pipelines-maven-sample
-      gitProvider: manishas_jfrog
+      path: {{ Values.repoPath }}
+      gitProvider: {{ Values.gitProvider }}
 
-  - name: appl_build_info
+  - name: mvn_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demoArt
-
-  - name: appl_promoted_build_info
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: demoArt
+      sourceArtifactory: {{ Values.artifactory }}
 
 pipelines:
   - name: demo_maven
@@ -21,32 +16,18 @@ pipelines:
       - name: mvn_build_step
         type: MvnBuild
         configuration:
-         # resolverSnapshotRepo: maven-jcenter
-         # resolverReleaseRepo: maven-jcenter
-          deployerSnapshotRepo: maven-local
-          deployerReleaseRepo: maven-local
-         # mvnCommand: clean install
+          deployerSnapshotRepo: {{ Values.deployerRepo }}
+          deployerReleaseRepo: {{ Values.deployerRepo }}
           inputResources:
-            - name: be_gitRepo
+            - name: mvn_repo
           integrations:
-            - name: demoArt
+            - name: {{ Values.artifactory }}
 
-      - name: publish_app_build
+      - name: publish_build
         type: PublishBuildInfo
         configuration:
           forceXrayScan: false
           inputSteps:
             - name: mvn_build_step
           outputResources:
-            - name: appl_build_info
-
-      - name: promote_app_build
-        type: PromoteBuild
-        configuration:
-          targetRepository: demo-pipelines
-          integrations:
-            - name: demoArt
-          inputResources:
-            - name: appl_build_info
-          outputResources:
-            - name: appl_promoted_build_info
+            - name: mvn_build_info

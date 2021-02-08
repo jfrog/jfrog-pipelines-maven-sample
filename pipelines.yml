@@ -1,3 +1,6 @@
+template: true   # required for local templates
+valuesFilePath: ./values.yml
+
 resources:
   - name: mvn_repo
     type: GitRepo

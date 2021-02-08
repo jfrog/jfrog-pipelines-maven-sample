@@ -5,13 +5,13 @@ resources:
   - name: mvn_repo
     type: GitRepo
     configuration:
-      path: {{ Values.repoPath }}
-      gitProvider: {{ Values.gitProvider }}
+      path: {{ .Values.repoPath }}
+      gitProvider: {{ .Values.gitProvider }}
 
   - name: mvn_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: {{ Values.artifactory }}
+      sourceArtifactory: {{ .Values.artifactory }}
 
 pipelines:
   - name: demo_maven
@@ -19,12 +19,12 @@ pipelines:
       - name: mvn_build_step
         type: MvnBuild
         configuration:
-          deployerSnapshotRepo: {{ Values.deployerRepo }}
-          deployerReleaseRepo: {{ Values.deployerRepo }}
+          deployerSnapshotRepo: {{ .Values.deployerRepo }}
+          deployerReleaseRepo: {{ .Values.deployerRepo }}
           inputResources:
             - name: mvn_repo
           integrations:
-            - name: {{ Values.artifactory }}
+            - name: {{ .Values.artifactory }}
 
       - name: publish_build
         type: PublishBuildInfo

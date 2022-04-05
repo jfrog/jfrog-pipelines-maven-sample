@@ -1,4 +1,4 @@
 gitProvider: my_github
 artifactory: demoArt
-repoPath: jfrog/jfrog-pipelines-maven-sample
+repoPath: iwashitah/jfrog-pipelines-maven-sample
 deployerRepo: maven

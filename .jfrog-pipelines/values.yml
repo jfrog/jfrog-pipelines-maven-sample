@@ -1,4 +1,4 @@
 gitProvider: github_p
-artifactory: nagagjpd1
+artifactory: nagagjpd1art
 repoPath: nagag08/jfrog-pipelines-maven-sample
 deployerRepo: maven-virt

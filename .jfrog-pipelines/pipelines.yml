@@ -14,7 +14,7 @@ resources:
       sourceArtifactory: {{ .Values.artifactory }}
 
 pipelines:
-  - name: Maven_Build_Pipeline
+  - name: Maven_Quickstart
     steps:
       - name: mvn_build_step
         type: MvnBuild

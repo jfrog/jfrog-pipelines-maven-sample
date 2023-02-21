@@ -1,4 +1,11 @@
+
 gitProvider: github_p
 artifactory: nagagjpd1art
 repoPath: nagag08/jfrog-pipelines-maven-sample
 deployerRepo: maven-virt
+=======
+gitProvider: myGithub
+artifactory: myArtifactory
+repoPath: jfrog/jfrog-pipelines-maven-sample
+deployerRepo: quickstarts-maven-local
+

@@ -12,6 +12,11 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
+      
+  - name: cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '0 1 * * *'       
 
 pipelines:
   - name: Maven_Quickstart
@@ -23,6 +28,7 @@ pipelines:
           deployerReleaseRepo: {{ .Values.deployerRepo }}
           inputResources:
             - name: mvn_repo
+            - name: cron_trigger
           integrations:
             - name: {{ .Values.artifactory }}
 

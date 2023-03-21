@@ -13,7 +13,7 @@ resources:
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
       
-  - name: cron_trigger
+  - name: cron_trigger_mvn
     type: CronTrigger
     configuration:
       interval: '0 1 * * *'       
@@ -28,7 +28,7 @@ pipelines:
           deployerReleaseRepo: {{ .Values.deployerRepo }}
           inputResources:
             - name: mvn_repo
-            - name: cron_trigger
+            - name: cron_trigger_mvn
           integrations:
             - name: {{ .Values.artifactory }}
 

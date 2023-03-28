@@ -16,7 +16,7 @@ resources:
   - name: cron_trigger_mvn
     type: CronTrigger
     configuration:
-      interval: '0 1 * * *'       
+      interval: '0 3 * * *'       
 
 pipelines:
   - name: Maven_Quickstart

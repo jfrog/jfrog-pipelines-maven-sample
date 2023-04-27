@@ -1,4 +1,4 @@
-gitProvider: myGithub
-artifactory: myArtifactory
-repoPath: jfrog/jfrog-pipelines-maven-sample
-deployerRepo: quickstarts-maven-local
+gitProvider: sandy_github
+artifactory: sandy_Art
+repoPath: sandeepanikapati/jfrog-pipelines-maven-sample
+deployerRepo: sandy-maven-local

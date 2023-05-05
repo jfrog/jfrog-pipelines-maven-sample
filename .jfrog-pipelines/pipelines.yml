@@ -2,7 +2,6 @@ template: true   # required for local templates
 valuesFilePath: ./values.yml
 
 resources:
-resources:
   - name: {{.Values.pipeline.name}}_GitRepo
     type: GitRepo
     configuration:

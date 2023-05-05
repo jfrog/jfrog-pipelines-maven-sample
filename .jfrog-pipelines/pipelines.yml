@@ -2,21 +2,30 @@ template: true   # required for local templates
 valuesFilePath: ./values.yml
 
 resources:
-  - name: mvn_repo
+resources:
+  - name: {{.Values.pipeline.name}}_GitRepo
     type: GitRepo
     configuration:
-      path: {{ .Values.repoPath }}
-      gitProvider: {{ .Values.gitProvider }}
+      gitProvider: {{.Values.repo.gitProvider}}
+      path: {{.Values.repo.path}}
+      branches:
+        include: ^{{gitBranch}}$
+      buildOn:
+        commit: true
+      cancelPendingRunsOn:
+        newCommit: true
 
-  - name: mvn_build_info
+  - name: {{.Values.pipeline.name}}_BuildInfo
     type: BuildInfo
     configuration:
-      sourceArtifactory: {{ .Values.artifactory }}
-      
-  - name: cron_trigger_mvn
-    type: CronTrigger
+      sourceArtifactory: {{.Values.artifactory}}
+      buildName: ${JFROG_CLI_BUILD_NAME}
+      buildNumber: ${JFROG_CLI_BUILD_NUMBER}
+
+  - name: {{.Values.pipeline.name}}_Functions
+    type: Marvelution/Functions
     configuration:
-      interval: '0 3 * * *'       
+      functions: all     
 
 pipelines:
 - name: {{.Values.pipeline.name}}_TEST

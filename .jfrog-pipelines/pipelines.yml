@@ -22,7 +22,7 @@ resources:
       buildNumber: ${JFROG_CLI_BUILD_NUMBER}
 
   - name: {{.Values.pipeline.name}}_Functions
-    type: Marvelution/Functions
+    type: mvntest/Functions
     configuration:
       functions: all     
 
@@ -46,7 +46,7 @@ pipelines:
           tag: '8'
   steps:
   - name: build
-    type: Marvelution/MvnBuild
+    type: mvntest/MvnBuild
     configuration:
       mvnCommand: clean install
       resolverReleaseRepo: maven

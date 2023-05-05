@@ -1,0 +1,61 @@
+description: Custom MvnBuild step with optional cache options
+
+platforms:
+  - os: Linux
+
+configuration:
+  condition:
+    type: String
+  mvnCommand:
+    type: String
+  sourceLocation:
+    type: String
+  resolverSnapshotRepo:
+    type: String
+  resolverReleaseRepo:
+    type: String
+    required: true
+  deployerSnapshotRepo:
+    type: String
+  deployerReleaseRepo:
+    type: String
+  forceXrayScan:
+    type: Boolean
+  failOnScan:
+    type: Boolean
+  autoPublishBuildInfo:
+    type: Boolean
+  configFileName:
+    type: String
+  configFileLocation:
+    type: String
+  restoreLocalRepositoryCache:
+    type: String
+  restoreTargetCache:
+    type: String
+  testLocation:
+    type: String
+  addLocalRepositoryCache:
+    type: Boolean
+  addTargetCache:
+    type: Boolean
+  artifacts:
+    type: Artifact[]
+  mavenConfig:
+    type: String
+  generateBranchSpecificVersion:
+    type: Boolean
+  branchSpecificVersionProperty:
+    type: String
+  autoRetry:
+    type: Boolean
+
+userDefinedDataType:
+  - type: Artifact
+    configuration:
+      name:
+        type: String
+      pattern:
+        type: String
+      path:
+        type: String

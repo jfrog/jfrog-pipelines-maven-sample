@@ -1,0 +1,8 @@
+description: Helper functions
+
+platforms:
+  - os: Linux
+
+configuration:
+  functions:
+    type: String

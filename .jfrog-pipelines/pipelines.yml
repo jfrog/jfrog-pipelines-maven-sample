@@ -35,7 +35,7 @@ pipelines:
     jfrogCliVersion: 2
     environmentVariables:
       readOnly:
-        # Make sure to deploy the custom ext-build-info plugin: see https://github.com/marvelution/ext-build-info/
+        # Make sure to deploy the custom ext-build-info plugin:: see https://github.com/marvelution/ext-build-info/
         JFROG_CLI_PLUGINS_SERVER: {{.Values.artifactory}}
         JFROG_CLI_BUILD_NUMBER: ${run_id}
     runtime:

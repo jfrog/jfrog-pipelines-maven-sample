@@ -5,7 +5,7 @@ export disableArtifactoryRecorder="-Dorg.jfrog.build.extractor.maven.recorder.ac
 
 get_jfrog_version() {
   if [ -z "$CLI_MAJOR_VERSION" ]; then
-    export CLI_MAJOR_VERSION=$(jfrog --version | awk '{print $3}' | cut -d '.' -f 1) //test
+    export CLI_MAJOR_VERSION=$(jfrog --version | awk '{print $3}' | cut -d '.' -f 1) #Hi
   fi
   echo "$CLI_MAJOR_VERSION"
 }

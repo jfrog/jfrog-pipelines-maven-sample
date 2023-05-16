@@ -1,4 +1,4 @@
-template: true   # required for local template
+template: true   # required for local template..
 valuesFilePath: ./values.yml
 
 resources:

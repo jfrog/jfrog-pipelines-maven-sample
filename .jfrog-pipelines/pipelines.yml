@@ -1,4 +1,4 @@
-template: true   # required for local template. helloe
+template: true   # required for local template. hellow
 valuesFilePath: ./values.yml
 
 resources:

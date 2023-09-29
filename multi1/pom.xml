@@ -85,5 +85,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0mliopqvnokr-artifactory-primary-1-releases</name>
+        <url>https://demo.jfrog.io/artifactory/jfrog-maven-example</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>a0mliopqvnokr-artifactory-primary-1-snapshots</name>
+        <url>https://demo.jfrog.io/artifactory/jfrog-maven-example</url>
+    </snapshotRepository>
+</distributionManagement>
 </project>

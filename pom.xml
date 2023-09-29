@@ -69,7 +69,9 @@
             </plugin>
         </plugins>
     </build>
-  <distributionManagement>
+
+</project>
+<distributionManagement>
     <repository>
         <id>central</id>
         <name>a0mliopqvnokr-artifactory-primary-1-releases</name>
@@ -81,4 +83,3 @@
         <url>https://demo.jfrog.io/artifactory/jfrog-maven-example</url>
     </snapshotRepository>
 </distributionManagement>  
-</project>

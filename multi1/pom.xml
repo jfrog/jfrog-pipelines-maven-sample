@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jfrog.test</groupId>
-        <artifactId>multi</artifactId>
+        <artifactId>jfrog-maven-example</artifactId>
         <version>3.7-SNAPSHOT</version>
     </parent>
 
-    <artifactId>multi1</artifactId>
+    <artifactId>jfrog-maven-example</artifactId>
     <packaging>jar</packaging>
-    <name>Multi 1</name>
+    <name>jfrog-maven-example</name>
 
     <licenses>
         <license>

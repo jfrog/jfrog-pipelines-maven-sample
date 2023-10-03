@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jfrog.test</groupId>
-        <artifactId>multi</artifactId>
+        <artifactId>jfrog-maven-example</artifactId>
         <version>3.7-SNAPSHOT</version>
     </parent>
 
@@ -11,9 +11,9 @@
         <daversion>${project.parent.version}</daversion>
     </properties>
 
-    <artifactId>multi2</artifactId>
+    <artifactId>jfrog-maven-example</artifactId>
     <version>3.7-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Multi 2</name>
+    <name>jfrog-maven-example</name>
 
 </project>
